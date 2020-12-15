@@ -1,5 +1,4 @@
 <template>
-  hi
   <div class="TableOfContents">
     <li v-for="chapter of chapters" :key="chapter.id">
       {{ chapter.title }}
@@ -9,7 +8,7 @@
 
 <script>
 import { useQuery, useResult } from '@vue/apollo-composable'
-import gql from '@apollo/client/core'
+import { gql } from '@apollo/client/core'
 
 export default {
   name: 'TableOfContents',
@@ -30,7 +29,6 @@ export default {
     `)
 
     const chapters = useResult(result, [])
-    console.log('chapters:', chapters)
 
     return {
       loading,

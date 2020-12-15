@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    test
     <TableOfContents />
   </div>
 </template>
@@ -10,14 +9,13 @@
 import { provide } from 'vue'
 import { ApolloClient, InMemoryCache } from '@apollo/client/core'
 import { DefaultApolloClient } from '@vue/apollo-composable'
+
 import TableOfContents from './components/TableOfContents.vue'
 
 const client = new ApolloClient({
   uri: 'https://api.graphql.guide/graphql',
   cache: new InMemoryCache()
 })
-
-console.log('setup')
 
 export default {
   name: 'App',
