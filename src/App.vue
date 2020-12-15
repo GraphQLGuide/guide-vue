@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    test
+    <TableOfContents />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { provide } from 'vue'
+import { ApolloClient, InMemoryCache } from '@apollo/client/core'
+import { DefaultApolloClient } from '@vue/apollo-composable'
+import TableOfContents from './components/TableOfContents.vue'
+
+const client = new ApolloClient({
+  uri: 'https://api.graphql.guide/graphql',
+  cache: new InMemoryCache()
+})
+
+console.log('setup')
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TableOfContents
+  },
+  setup() {
+    provide(DefaultApolloClient, client)
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
