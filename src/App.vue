@@ -1,14 +1,12 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <TableOfContents />
-  </div>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <TableOfContents />
 </template>
 
 <script>
-import { provide } from 'vue'
 import { ApolloClient, InMemoryCache } from '@apollo/client/core'
 import { DefaultApolloClient } from '@vue/apollo-composable'
+import { provide } from 'vue'
 
 import TableOfContents from './components/TableOfContents.vue'
 
@@ -27,5 +25,3 @@ export default {
   }
 }
 </script>
-
-<style></style>

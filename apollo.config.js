@@ -2,11 +2,8 @@ module.exports = {
   client: {
     service: {
       name: 'guide-api',
-      url: 'https://api.graphql.guide/graphql',
+      url: 'https://api.graphql.guide/graphql'
     },
-    includes: [
-      'src/**/*.vue',
-      'src/**/*.js',
-    ],
-  },
+    includes: ['src/**/*.vue', 'src/**/*.js']
+  }
 }
