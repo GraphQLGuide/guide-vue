@@ -48,8 +48,8 @@ export default {
     return {
       loading,
       error,
-      noSections: computed(() => sections.value.length === 1),
-      sections
+      sections,
+      noSections: computed(() => sections.value.length === 1)
     }
   }
 }

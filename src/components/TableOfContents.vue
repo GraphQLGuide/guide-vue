@@ -8,7 +8,9 @@
   <ul>
     <li v-for="chapter of chapters" :key="chapter.id">
       <a @click="updateCurrentSection(chapter.id)">
-        {{ (chapter.number ? chapter.number + '. ' : '') + chapter.title }}
+        {{
+          chapter.number ? `${chapter.number}. ${chapter.title}` : chapter.title
+        }}
       </a>
     </li>
   </ul>
@@ -31,6 +33,8 @@ export default {
     SectionList
   },
   setup() {
+    const currentSection = ref(PREFACE_ID)
+
     const { result, loading, error } = useQuery(gql`
       query ChapterList {
         chapters {
@@ -42,8 +46,6 @@ export default {
     `)
 
     const chapters = useResult(result, [])
-
-    const currentSection = ref(PREFACE_ID)
 
     return {
       loading,
