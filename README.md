@@ -1,6 +1,6 @@
 ## Chapter 7: Vue
 
-Numbered branches (`0` and up) have the most up-to-date code (often newer than the most recent published revision of the book). When code has changed between book revisions, a new code version is created, and each branch is tagged, with the naming format `[step]_[version]`. For instance, revision `r6` of the book was published with version `1.0.0` of this repo, so the tag for step 2 was [`2_1.0.0`](https://github.com/GraphQLGuide/guide-vue/releases/tag/2_1.1.0).
+Numbered branches (`0` and up) have the most up-to-date code (often newer than the most recent published revision of the book). When code has changed between book revisions, a new code version is created, and each branch is tagged, with the naming format `[step]_[version]`. For instance, revision `r6` of the book was published with version `1.0.0` of this repo, so the tag for step 2 was [`2_1.0.0`](https://github.com/GraphQLGuide/guide-vue/releases/tag/2_1.0.0).
 
 ## Supporting 
 
