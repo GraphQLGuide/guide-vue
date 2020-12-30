@@ -5,20 +5,34 @@
 
   <ul>
     <li v-for="chapter of chapters" :key="chapter.id">
-      {{
-        chapter.number ? `${chapter.number}. ${chapter.title}` : chapter.title
-      }}
+      <a @click="updateCurrentSection(chapter.id)">
+        {{
+          chapter.number ? `${chapter.number}. ${chapter.title}` : chapter.title
+        }}
+      </a>
     </li>
   </ul>
+
+  <SectionList :id="currentSection" />
 </template>
 
 <script>
-import { gql } from '@apollo/client/core'
 import { useQuery, useResult } from '@vue/apollo-composable'
+import { gql } from '@apollo/client/core'
+import { ref } from 'vue'
+
+import SectionList from './SectionList.vue'
+
+const PREFACE_ID = -2
 
 export default {
   name: 'TableOfContents',
+  components: {
+    SectionList
+  },
   setup() {
+    const currentSection = ref(PREFACE_ID)
+
     const { result, loading, error } = useQuery(gql`
       query ChapterList {
         chapters {
@@ -34,7 +48,9 @@ export default {
     return {
       loading,
       error,
-      chapters
+      chapters,
+      currentSection,
+      updateCurrentSection: newSection => (currentSection.value = newSection)
     }
   }
 }
