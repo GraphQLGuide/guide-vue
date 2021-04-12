@@ -5,7 +5,7 @@ This file applies to the app that is created in Chapter 7 of the book—so the n
 
 Releases are done with tags in the form `[step]_[version]`, so for instance step `2` of version `1.0.0` is `2_1.0.0`, located here: 
 
-[/GraphQLGuide/guide/releases/tag/2_1.0.0](https://github.com/GraphQLGuide/guide/releases/tag/2_1.0.0)
+[/GraphQLGuide/guide-vue/releases/tag/2_1.0.0](https://github.com/GraphQLGuide/guide-vue/releases/tag/2_1.0.0)
 
 <!-- ## [Unreleased]
 ### Added
